@@ -1,0 +1,1 @@
+export { HouseCard as default} from './HouseCard'

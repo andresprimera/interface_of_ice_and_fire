@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useCharacters } from "@/hooks/characters/useCharacters";
 
 export default function Home() {  
   return (

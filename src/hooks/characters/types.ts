@@ -1,6 +1,5 @@
-export interface PaginationProps{
-    page: number, 
-    pageSize: number
+export interface UseCharacterProps{
+    character?: string
 }
 
 export interface CharacterType {

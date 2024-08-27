@@ -1,17 +1,16 @@
 'use client'
 
 import { useQuery } from "@tanstack/react-query"
-import { getCharacters } from "./charactersService"
-import { PaginationProps } from "./types"
+import { getSwornMembers } from "./characters.service"
 
-export const useCharacters = (params : PaginationProps)=>{
-    const characters = useQuery({
-        queryKey: ['characters'],
-        queryFn: ()=> getCharacters(params),
-        enabled: true
+export const useCharacters = (swornMembersArray?: string[])=>{
+    const swornMembers = useQuery({
+        queryKey: ['characters', swornMembersArray ],
+        queryFn: ()=> getSwornMembers(swornMembersArray || []),
+        enabled: Boolean(swornMembersArray)
     })
 
     return {
-        characters
+        swornMembers
     }
 }

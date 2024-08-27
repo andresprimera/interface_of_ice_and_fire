@@ -1,0 +1,1 @@
+export { HousesContainer as default } from './houses' 
