@@ -1,0 +1,1 @@
+export { useCharacters as default } from './useCharacters'

@@ -1,0 +1,1 @@
+yarn check:pending:changes && yarn lint && yarn build

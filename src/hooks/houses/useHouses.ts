@@ -1,17 +1,27 @@
 'use client'
 
-import { useQuery } from "@tanstack/react-query"
-import { getHouses } from "./houses.service"
-import { PaginationProps } from "./types"
+import { useInfiniteQuery } from "@tanstack/react-query"
+import { fetchHouses } from "./houses.service"
 
-export const useHouses = ({ page, pageSize } : PaginationProps)=>{
-    const houses = useQuery({
-        queryKey: ['houses', page, pageSize],
-        queryFn: ()=> getHouses({ page, pageSize }),
-        enabled: true
-    })
+export const useHouses = ()=>{
+      const {
+        data,
+        fetchNextPage,
+        isFetching,
+        isFetchingNextPage,
+      } = useInfiniteQuery({
+        queryKey: ['houses'],
+        queryFn: fetchHouses,
+        initialPageParam: 0,
+        getNextPageParam: (pages) => {
+           return pages.length + 1
+        },
+      })
 
     return {
-        houses
+        houses: data,
+        isFetching,
+        isFetchingNextPage,
+        fetchNextPage
     }
 }

@@ -1,0 +1,1 @@
+export { useHouses as default} from './useHouses'

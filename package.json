@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "husky",
+    "check:pending:changes": "git diff --quiet || (echo 'Error: There are non-staged changes.' && exit 1)"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.0.0",
     "@mui/material": "^6.0.0",
     "@tanstack/react-query": "^5.52.2",
     "next": "14.2.7",
@@ -21,8 +24,10 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-lottie": "^1.2.10",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
+    "husky": "^9.1.5",
     "typescript": "^5"
   }
 }

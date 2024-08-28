@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { fetcher } from "@/config/fetcher";
-import {  HousesTypes, PaginationProps } from "./types";
-
-export const getHouses = async ({ page, pageSize }: PaginationProps)=> fetcher<HousesTypes[]>(`https://www.anapioficeandfire.com/api/houses?page=${page}&pageSize=${pageSize}`)
+export const fetchHouses = async ({ pageParam } : { pageParam: number}) : Promise<any> => {
+    const res = await fetch(`https://www.anapioficeandfire.com/api/houses?page=${pageParam}&pageSize=${10}`)
+    return res.json()
+  }

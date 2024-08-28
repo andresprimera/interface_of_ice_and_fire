@@ -1,8 +1,3 @@
-export interface PaginationProps{
-    page: number, 
-    pageSize: number
-}
-
 export interface HousesTypes {
     url: string;
     name: string;

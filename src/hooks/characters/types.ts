@@ -1,7 +1,7 @@
 export interface UseCharacterProps{
-    character?: string
+    swornMembersArray?: string[],
+    characterNumber?: number
 }
-
 export interface CharacterType {
     url: string;
     name: string;

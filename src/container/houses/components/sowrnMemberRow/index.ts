@@ -1,1 +1,0 @@
-export { SwornMemberRow as default } from './swornMemberRow'
