@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "husky",
-    "check:pending:changes": "git diff --quiet || (echo 'Error: There are non-staged changes.' && exit 1)"
+    "check:pending:changes": "git diff --quiet || (echo 'Error: There are non-staged changes.' && exit 1)",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
